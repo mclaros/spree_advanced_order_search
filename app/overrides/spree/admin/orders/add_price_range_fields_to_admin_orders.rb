@@ -2,16 +2,15 @@ Deface::Override.new(:virtual_path => 'spree/admin/orders/index',
 	:name => "add_shipment_status_to_admin_orders",
 	:insert_after => "div.date-range-filter",
 	:text => "
-		<div class='field' id='q_shipment_state'>
+		<div class='field' id='q_range_fields'>
 			<label>
-				Shipment Status
+				Price Range
 				<br>
-				<select class='select2' id='ship_state' name='q[shipment_state]'>
-					<option value></option>
-					<option value='ready'>Ready</option>
-					<option value='pending'>Pending</option>
-					<option value='shipped'>Shipped</option>
-				</select>
+					<input id='q_price_min' type='text' name='q[price_range][]' placeholder='Min.'>
+					<span class='range-divider'>
+						<i class='icon-arrow-right'></i>
+					</span>
+					<input id='q_price_max' type='text' name='q[price_range][]' placeholder='Max.'>
 			</label>
 		</div>
 	")
