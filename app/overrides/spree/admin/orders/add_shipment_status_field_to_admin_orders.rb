@@ -3,7 +3,7 @@ Deface::Override.new(:virtual_path => 'spree/admin/orders/index',
 	:insert_after => "div.date-range-filter",
 	:text => "
 		<div class='field'>
-			<%= f.label :shipment_status, 'Shipment Status' %>
-			<%= f.select :ship_state_eq, Spree::Order.state_machines[:ship_state].states.collect {|s| [t('order_state.#{s.name}'), s.value]}, {:include_blank => true}, :class => 'select2' %>}
+			<%= f.label :ship_state, 'Shipment Status' %>
+			<%= f.select :ship_state_eq, Spree::Order.state_machines[:ship_state].states.collect {|s| [t('order_state.' + s.name.to_s), s.value]}, {:include_blank => true}, :class => 'select2' %>}
 		</div>
 		")
