@@ -4,6 +4,6 @@ Deface::Override.new(:virtual_path => 'spree/admin/orders/index',
 	:text => "
 		<div class='field'>
 			<%= f.label :ship_state, 'Shipment Status' %>
-			<%= f.select :ship_state_eq, ['', 'ready', 'pending', 'shipped'], {:include_blank => true}, :class => 'select2' %>}
+			<%= f.select :shipment_state_eq, Spree::Order.state_machines[:shipment_state].states.collect {|s| [t('order_shipment_state.' + s.name.to_s), s.value]}, {:include_blank => true}, :class => 'select2' %>}
 		</div>
 		")
